@@ -28,7 +28,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/v1':  'http://musicapi.qianqian.com',
+        // '/v1':  'http://musicapi.qianqian.com',
+        '/v1':  {
+            target: 'http://musicapi.qianqian.com',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/v1': '/v1'
+            }
+        },
         '/song':  {
             target: 'http://music.baidu.com',
             changeOrigin: true,
