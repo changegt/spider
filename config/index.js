@@ -29,18 +29,32 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         // '/v1':  'http://musicapi.qianqian.com',
-        '/v1':  {
+        '/bdmusicapi':  {
             target: 'http://musicapi.qianqian.com',
             changeOrigin: true,
             pathRewrite: {
-                '^/v1': '/v1'
+                '^/bdmusicapi': ''
             }
         },
-        '/song':  {
+        '/bdsongapi':  {
             target: 'http://music.baidu.com',
             changeOrigin: true,
             pathRewrite: {
-                '^/song': '/song'
+                '^/bdsongapi': ''
+            }
+        },
+        '/bdmp3api': {
+            target: 'http://zhangmenshiting.baidu.com',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/bdmp3api': ''
+            }  
+        },
+        '/kgsongapi':{
+            target: 'http://mobilecdn.kugou.com',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/kgsongapi': ''
             }
         }
     },

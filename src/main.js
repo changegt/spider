@@ -9,11 +9,15 @@ import 'mint-ui/lib/style.css'
 
 import Axios from 'axios'
 
+import Jsonp from 'vue-jsonp'
+
 Vue.config.productionTip = false
 
 Vue.use(MintUI)
+Vue.use(Jsonp);
 
 Vue.prototype.axios = Axios;
+// Vue.prototype.jsonp = Jsonp;
 
 /* eslint-disable no-new */
 window.vm = new Vue({

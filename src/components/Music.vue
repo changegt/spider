@@ -1,8 +1,6 @@
 <template>
-	<div class="music-box" style="text-align: left;">
-		<div>歌曲名字：{{data.songinfo.title}}</div>
-		<div>歌曲作者：{{data.songinfo.author}}</div>
-		<a :href="data.bitrate.file_link">歌曲link：{{data.bitrate.file_link}}</a>
+	<div class="music-box">
+		<div class="data-box" style="display: none;" v-html="dom"></div>
 	</div>
 </template>
 
@@ -25,25 +23,31 @@
 			      vm.axios.get('/song/'+songid+'?_partial=true&header=false').then(function(resp){
 			        if(resp.status == 200){
 			         	_self.dom = resp.data.content;
-			         	console.log(resp.data);
+			         	_self.setNextTick();
 			        }
 			      });
 		      }, 200)
 		    },
-
-		    play2() {
+		    setNextTick() {
 		    	var _self = this;
-		    	var url = '/v1/restserver/ting?from=webapp_music&method=baidu.ting.song.playAAC&format=jsonp&callback=song_playAAC&songid='+this.songid+'&s_protocol=';
-		    	setTimeout(() => {
-		    		vm.axios.get(url).then(function(resp){
-			        if(resp.status == 200){
-			        	var data = resp.data.split('/**/song_playAAC(')[1].split(');')[0];
-			        	_self.data = eval('('+data+')');
-			        	console.log(_self.data);
-			        }
-			      });
-		    	}, 200);
+	         	_self.$nextTick(() => {
+	         		_self.anylise();
+	         	});
+		    },
+
+		    anylise() {
+		    	var dom = document.getElementsByClassName('view-state')[0].innerHTML;
+		    	var obj = eval('('+dom+')');
 		    }
 		}
 	}
 </script>
+
+<style type="text/css">
+	.view-state{
+		display: none;
+	}
+	.backside {
+		display: none;
+	}
+</style>

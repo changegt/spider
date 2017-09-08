@@ -1,0 +1,16 @@
+知识点：
+1、vue使用
+
+2、vue-router使用
+
+3、axios使用
+
+4、vuex使用
+
+
+讲解点
+	1、proxytable
+	2、axios使用
+		axios好像不支持jsonp解析
+		jquery如何解析jsonp
+		使用jsonp发送jsonp跨域请求
