@@ -14,3 +14,8 @@
 		axios好像不支持jsonp解析
 		jquery如何解析jsonp
 		使用jsonp发送jsonp跨域请求
+
+
+http://mobilecdn.kugou.com/api/v3/search/song?format=jsonp&keyword=%E4%B8%89%E5%9B%BD&page=1&pagesize=30&showtype=1&callback=kgJSONP225335305
+
+http://localhost:8080/kgsongapi/api/v3/search/song?format=jsonp&keyword=sanguo&page=1&pagesize=30&showtype=1&callback=jsonp_f920adaa50c8d8
