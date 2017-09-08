@@ -56,6 +56,13 @@ module.exports = {
             pathRewrite: {
                 '^/kgsongapi': ''
             }
+        },
+        '/kgmp3api': {
+            target: 'http://m.kugou.com',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/kgmp3api': ''
+            }
         }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

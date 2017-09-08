@@ -10,12 +10,31 @@
 
 讲解点
 	1、proxytable
+        
+
 	2、axios使用
 		axios好像不支持jsonp解析
 		jquery如何解析jsonp
 		使用jsonp发送jsonp跨域请求
 
+        1、什么是axios
+            axios 是一个基于 Promise 的，为浏览器和 Node.js 设计的 HTTP 客户端。它尽可能简化封装了 HTTP 相关的各种操作，在 Web App 中使用非常方便。
+            Vue 2 官方建议在由 Vue 构建的 项目 中使用 axios 进行 HTTP 操作。
 
-http://mobilecdn.kugou.com/api/v3/search/song?format=jsonp&keyword=%E4%B8%89%E5%9B%BD&page=1&pagesize=30&showtype=1&callback=kgJSONP225335305
+        2、axios实战
 
-http://localhost:8080/kgsongapi/api/v3/search/song?format=jsonp&keyword=sanguo&page=1&pagesize=30&showtype=1&callback=jsonp_f920adaa50c8d8
+        3、axios解析api
+
+        axios xmlhttprequest 
+            vm.axios.get('http://localhost:8080/kgmp3api/app/i/getSongInfo.php?cmd=playInfo&hash=ecbfc67544ed78403d7a10e95eee508f&from=mkugou').then(data => {console.log(data)})
+
+            vm.$.ajax({
+                url: 'http://localhost:8080/kgmp3api/app/i/getSongInfo.php?cmd=playInfo&hash=ecbfc67544ed78403d7a10e95eee508f&from=mkugou',
+                type: 'get',
+                dataType: 'json',
+                success: function(data){console.log(data)}
+            })
+
+    3、vuex
+
+
